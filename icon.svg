@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#grad)"/>
+
+  <!-- Map Pin Icon -->
+  <path d="M256 128c-44.2 0-80 35.8-80 80 0 66 80 144 80 144s80-78 80-144c0-44.2-35.8-80-80-80z"
+        fill="white" opacity="0.9"/>
+
+  <!-- Inner circle of pin -->
+  <circle cx="256" cy="208" r="32" fill="#667eea"/>
+
+  <!-- Bell Icon (small) -->
+  <g transform="translate(310, 310) scale(0.6)">
+    <path d="M100 50c-11 0-20 9-20 20v10c0 5.5-4.5 10-10 10s-10-4.5-10-10V70c0-22 18-40 40-40s40 18 40 40v10c0 5.5-4.5 10-10 10s-10-4.5-10-10V70c0-11-9-20-20-20z"
+          fill="white"/>
+    <path d="M100 110c16.5 0 30-13.5 30-30H70c0 16.5 13.5 30 30 30z"
+          fill="white"/>
+  </g>
+</svg>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2196F3">
+    <meta name="description" content="آلارم مبتنی بر موقعیت مکانی - وقتی به مقصد رسیدید زنگ می‌زند">
+    <title>آلارم در حرکت</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>📍 آلارم در حرکت</h1>
+            <p class="subtitle">روی نقشه کلیک کنید و مقصد خود را انتخاب کنید</p>
+        </header>
+
+        <!-- Map Container -->
+        <div id="map"></div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <!-- Alarm Settings -->
+            <div class="settings-card">
+                <h3>تنظیمات آلارم</h3>
+                <div class="setting-item">
+                    <label for="radius">شعاع هشدار (متر):</label>
+                    <input type="number" id="radius" value="500" min="100" max="2000" step="100">
+                </div>
+                <div class="setting-item">
+                    <label for="alarm-name">نام مقصد:</label>
+                    <input type="text" id="alarm-name" placeholder="مثلاً: خانه، محل کار">
+                </div>
+                <button id="save-alarm" class="btn btn-primary">ذخیره آلارم</button>
+            </div>
+
+            <!-- Active Alarms List -->
+            <div class="alarms-card">
+                <h3>آلارم‌های فعال</h3>
+                <div id="alarms-list" class="alarms-list">
+                    <p class="no-alarms">هیچ آلارمی تنظیم نشده است</p>
+                </div>
+            </div>
+
+            <!-- Current Status -->
+            <div class="status-card">
+                <h3>وضعیت</h3>
+                <div id="status-info">
+                    <p>📡 موقعیت شما: <span id="current-location">در حال دریافت...</span></p>
+                    <p>🎯 نزدیک‌ترین مقصد: <span id="nearest-alarm">---</span></p>
+                    <p>📏 فاصله: <span id="distance">---</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alarm Modal (when alarm triggers) -->
+        <div id="alarm-modal" class="alarm-modal hidden">
+            <div class="alarm-modal-content">
+                <h2>🔔 رسیدید!</h2>
+                <p id="alarm-message">به مقصد خود رسیده‌اید</p>
+                <button id="stop-alarm" class="btn btn-stop">خاموش کردن آلارم</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+
+    <!-- Register Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.log('Service Worker registration failed'));
+        }
+    </script>
+</body>
+</html>
