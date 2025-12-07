@@ -18,24 +18,36 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Install PWABuilder CLI
-      run: npm install -g @pwabuilder/cli
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
 
-    - name: Build Android Package
-      run: |
-        pwa package https://mehrabihojjat.github.io/alarm_on_the_go/ android
+    - name: Install Bubblewrap CLI
+      run: npm install -g @bubblewrap/cli
 
-    - name: Find APK file
+    - name: Initialize Bubblewrap Project
       run: |
-        find . -name "*.apk" -type f
+        bubblewrap init --manifest https://mehrabihojjat.github.io/alarm_on_the_go/manifest.json
+
+    - name: Build APK
+      run: |
+        cd twa
+        bubblewrap build
+
+    - name: Find and List APK files
+      run: |
+        find . -name "*.apk" -type f -ls
+        ls -la twa/app/build/outputs/apk/release/ || echo "Release folder not found"
 
     - name: Upload APK as artifact
       uses: actions/upload-artifact@v4
       with:
         name: alarm-on-the-go-android
         path: |
-          **/*.apk
-          **/*.aab
+          twa/app/build/outputs/apk/release/*.apk
+          twa/app/build/outputs/bundle/release/*.aab
         retention-days: 30
         if-no-files-found: warn
 
