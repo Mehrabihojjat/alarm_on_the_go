@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دانلود APK - آلارم در حرکت</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: white;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 16px 64px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .steps {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: right;
+        }
+
+        .step {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step strong {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            padding: 1.5rem 3rem;
+            border-radius: 16px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin: 1rem 0;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .note {
+            background: rgba(255, 152, 0, 0.2);
+            border-left: 4px solid rgba(255, 152, 0, 0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            text-align: right;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            .btn {
+                padding: 1.2rem 2rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">📱</div>
+        <h1>دانلود فایل APK</h1>
+        <p class="subtitle">آلارم در حرکت - نسخه اندروید</p>
+
+        <a href="https://www.pwabuilder.com/?site=https://mehrabihojjat.github.io/alarm_on_the_go/"
+           class="btn"
+           target="_blank">
+            ✨ ساخت APK (کلیک کنید)
+        </a>
+
+        <div class="steps">
+            <div class="step">
+                <strong>قدم 1:</strong> روی دکمه بالا کلیک کنید
+            </div>
+            <div class="step">
+                <strong>قدم 2:</strong> صبر کنید تا آنالیز تمام شه (30 ثانیه)
+            </div>
+            <div class="step">
+                <strong>قدم 3:</strong> روی "Package For Stores" کلیک کنید
+            </div>
+            <div class="step">
+                <strong>قدم 4:</strong> در قسمت Android، روی "Generate" کلیک کنید
+            </div>
+            <div class="step">
+                <strong>قدم 5:</strong> فایل ZIP دانلود میشه - باز کنید و APK رو نصب کنید
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>⚠️ نکته:</strong> اولین بار که APK رو نصب می‌کنید، باید "نصب از منابع ناشناس" رو فعال کنید.
+        </div>
+    </div>
+
+    <script>
+        // Auto-scroll smooth
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.querySelector('.btn');
+            btn.addEventListener('click', () => {
+                btn.textContent = '⏳ در حال باز شدن...';
+                setTimeout(() => {
+                    btn.textContent = '✅ صفحه باز شد!';
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
