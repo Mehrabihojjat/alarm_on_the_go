@@ -2,26 +2,55 @@
   "name": "آلارم در حرکت",
   "short_name": "آلارم موقعیت",
   "description": "آلارم هوشمند مبتنی بر موقعیت مکانی - وقتی به مقصد رسیدید زنگ می‌زند",
-  "start_url": "/",
+  "start_url": "/alarm_on_the_go/",
+  "scope": "/alarm_on_the_go/",
   "display": "standalone",
   "background_color": "#667eea",
   "theme_color": "#667eea",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/alarm_on_the_go/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "icon-512.png",
+      "src": "/alarm_on_the_go/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/alarm_on_the_go/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/alarm_on_the_go/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "categories": ["utilities", "navigation"],
   "lang": "fa",
-  "dir": "rtl"
+  "dir": "rtl",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "shortcuts": [
+    {
+      "name": "تنظیم آلارم جدید",
+      "short_name": "آلارم جدید",
+      "description": "تنظیم سریع آلارم جدید",
+      "url": "/alarm_on_the_go/",
+      "icons": [
+        {
+          "src": "/alarm_on_the_go/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
 }
