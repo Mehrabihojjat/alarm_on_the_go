@@ -1,0 +1,52 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install PWABuilder CLI
+      run: npm install -g @pwabuilder/cli
+
+    - name: Build Android Package
+      run: |
+        pwa package https://mehrabihojjat.github.io/alarm_on_the_go/ android
+
+    - name: Find APK file
+      run: |
+        find . -name "*.apk" -type f
+
+    - name: Upload APK as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: alarm-on-the-go-android
+        path: |
+          **/*.apk
+          **/*.aab
+        retention-days: 30
+        if-no-files-found: warn
+
+    - name: Create Release on Tag
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          **/*.apk
+          **/*.aab
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
