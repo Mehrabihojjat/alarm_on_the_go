@@ -1,0 +1,43 @@
+{
+  "packageId": "com.alarm.onthego",
+  "host": "mehrabihojjat.github.io",
+  "name": "Alarm On The Go",
+  "launcherName": "آلارم در حرکت",
+  "display": "standalone",
+  "themeColor": "#667eea",
+  "navigationColor": "#667eea",
+  "backgroundColor": "#667eea",
+  "enableNotifications": true,
+  "startUrl": "/alarm_on_the_go/",
+  "iconUrl": "https://mehrabihojjat.github.io/alarm_on_the_go/icon-512.png",
+  "maskableIconUrl": "https://mehrabihojjat.github.io/alarm_on_the_go/icon-512.png",
+  "monochromeIconUrl": "https://mehrabihojjat.github.io/alarm_on_the_go/icon-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://mehrabihojjat.github.io/alarm_on_the_go/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {
+    "locationDelegation": {
+      "enabled": true
+    },
+    "playBilling": {
+      "enabled": false
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "orientation": "portrait",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "appVersion": "1"
+}

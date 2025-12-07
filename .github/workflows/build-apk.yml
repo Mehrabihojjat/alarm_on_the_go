@@ -27,14 +27,17 @@ jobs:
     - name: Install Bubblewrap CLI
       run: npm install -g @bubblewrap/cli
 
+    - name: Generate Signing Key
+      run: |
+        keytool -genkey -v -keystore android.keystore -alias android -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=Alarm On The Go, OU=Development, O=AlarmOnTheGo, L=Tehran, ST=Tehran, C=IR"
+
     - name: Initialize Bubblewrap Project
       run: |
-        bubblewrap init --manifest https://mehrabihojjat.github.io/alarm_on_the_go/manifest.json
+        bubblewrap init --manifest twa-manifest.json
 
     - name: Build APK
       run: |
-        cd twa
-        bubblewrap build
+        bubblewrap build --skipPwaValidation
 
     - name: Find and List APK files
       run: |
